@@ -23,9 +23,168 @@ Known Issues:
 blah, blah, blah, blah
 -->
 
-   <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
-	   
-   </body>
+  <head> 
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+        var sinusinfection_count = 0;
+        var covid19_count = 0;
+	
+
+
+        function sinusinfectionAdd(){ //function to count sinus infection//
+            sinusinfection_count = sinusinfection_count + 1;
+		alert(sinusinfection_count);
+
+        }
+
+        function covid19Add(){ //function to count covid-19//
+            covid19_count = covid19_count + 1;
+		alert(covid19_count);
+        
+	}
+	function getresults() { //function to calculate results// 
+	 var sinusinfectionPercent = sinusinfection_count/4*100;
+	 var covid19Percent = covid19_count/4*100;
+	 var resultText = document.getElementById("results");
+		resultText.innerHTML = "Probability it is a sinus infection =" + sinusinfectionPercent + "<br> Probability it is COVID-19 =" + covid19Percent;
+	}
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot"> <!-- start of page 1 -->
+	<h1>Sinus Infection or COVID-19?</h1> <!-- header for page 1 -->
+</div>
+	
+<div id="content" class="w3-container">  <!-- start of page 1 content -->
+	<p>Wondering if your symptoms indicate a sinus infection or COVID-19? Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!-- start button -->
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative Maker Space Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p> 
+	<!-- end of page 1 -->
+
+<div class="page" id="one"> <!-- start of question 1 -->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+		
+	</div> <!-- start of question 1 content -->
+	
+    	<div id="content" class="w3-container">
+        <p>Have you been experiencing post nasal drip?</p> <!-- header for question 1 -->
+	<a href="#two"  onclick="sinusinfectionAdd();" class="w3-btn w3-black">Yes</a> <!-- yes button adds for sinus infection -->
+	<a href="#two"  onclick="covid19Add();" class="w3-btn w3-black">No</a> <!-- no button adds for covid-19 -->
+
+</div> <!-- end of question 1 -->
+
+<div class="page" id="two"> <!-- start of question 2 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+		
+	</div> <!-- start of question 2 content -->
+	
+	<div id="content" class="w3-container">
+		<p>Have your lost your sense of taste or smell?</p> <!-- header for question 2 -->
+	<a href="#three"  onclick="covid19Add();" class="w3-btn w3-black">Yes</a> <!-- yes button adds for covid-19 -->
+	<a href="#three"  onclick="sinusinfectionAdd();" class="w3-btn w3-black">No</a> <!-- no button adds for sinus infection -->
+
+</div>	<!-- end of question 2 -->
+	
+<div class="page" id="three"> <!-- start of question 3 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+		
+	</div> <!-- start of question 3 content -->
+	
+	<div id="content" class="w3-container">
+		<p>Are you experiencing nausea or vomiting?</p> <!-- header for question 3 -->
+	<a href="#four"  onclick="covid19Add();" class="w3-btn w3-black">Yes</a> <!-- yes button adds for covid-19 -->
+	<a href="#four"  onclick="sinusinfectionAdd();" class="w3-btn w3-black">No</a> <!-- no button adds for sinus infection -->
+
+</div> <!-- end of question 3 -->
+	
+<div class="page" id="four"> <!-- start of question 4 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+		
+	</div> <!-- start of question 4 content -->
+	
+	<div id="content" class="w3-container"> <!-- header for question 4 -->
+		<p>Do you have swelling around your eyes?</p>
+	<a href="#five"  onclick="sinusinfectionAdd();" class="w3-btn w3-black">Yes</a> <!-- yes button adds for sinus infection -->
+	<a href="#five"  onclick="covid19Add();" class="w3-btn w3-black">No</a> <!-- no button adds for covid-19 -->
+
+</div> <!-- end of question 4 -->
+
+<div class="page" id="five"> <!-- start of question 5 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+		
+	</div> <!-- start of question 5 content -->
+	
+	<div id="content" class="w3-container"> <!-- header for question 5 -->
+		<p>Do you have body aches and pains?</p>
+	<a href="#six"  onclick="covid19Add();" class="w3-btn w3-black">Yes</a> <!-- yes button adds for covid-19 -->
+	<a href="#six"  onclick="sinusinfectionAdd();" class="w3-btn w3-black">No</a> <!-- no button adds for sinus infection -->
+		
+</div> <!-- end of question 5 -->
+
+<div class="page" id="six"> <!-- start of question 6 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+		
+	</div> <!-- start of question 6 content -->
+	
+	<div id="content" class="w3-container"> <!-- header for question 6 -->
+		<p>Have you been experiencing bad breath since your other symptoms began?</p>
+	<a href="#results"  onclick="sinusinfectionAdd();" class="w3-btn w3-black">Yes</a> <!-- yes button adds for sinus infection. goes to results page -->
+	<a href="#results"  onclick="covid19Add();" class="w3-btn w3-black">No</a> <!-- no button adds for covid-19. goes to results page -->
+		
+</div> <!-- end of question 6 -->
+	
+<div class="page" id="results"> <!-- results page -->
+<div class="w3-container w3-flat-carrot">
+	<h1>Results</h1> <!-- header for results -->
+	<a onclick="getresults();" class="w3-btn w3-black"> Get Results! </a> <!-- results button -->
+	<p id="results"></p>
+
+</div> <!-- end of results page -->
+	
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
+</body>
 </html>
